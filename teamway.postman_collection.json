@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "1b847868-95eb-4114-b0d5-aa9ed19ca306",
+		"name": "Teamway Worker Shift",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "workers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/worker",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"worker"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Worker",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "fullName",
+							"value": "Muratcan İTAP",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/worker/new",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"worker",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Shift",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "workerId",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "shift",
+							"value": "0-8",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/worker/new-shift",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"worker",
+						"new-shift"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
