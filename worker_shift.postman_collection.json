@@ -68,12 +68,17 @@
 					"formdata": [
 						{
 							"key": "workerId",
-							"value": "2",
+							"value": "1",
 							"type": "text"
 						},
 						{
 							"key": "shift",
 							"value": "0-8",
+							"type": "text"
+						},
+						{
+							"key": "date",
+							"value": "14-03-2019",
 							"type": "text"
 						}
 					]
