@@ -5,6 +5,8 @@ namespace App\Entity;
 use App\Repository\WorkerRepository;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Ignore;
+use Symfony\Component\Serializer\Annotation\SerializedName;
 
 /**
  * with unique constraint on (shift_date, worker_id)
@@ -20,6 +22,7 @@ use Doctrine\ORM\Mapping as ORM;
 class WorkerShift
 {
     public const SHIFTS = ['0-8' => 1, '8-16' => 2, '16-24' => 3];
+    public const SHIFTS_REVERSED = [1 => '0-8', 2 => '8-16', 3 => '16-24'];
 
     /**
      * @ORM\Id
@@ -36,11 +39,13 @@ class WorkerShift
     /**
      * @ORM\ManyToOne(targetEntity=Worker::class, inversedBy="shifts")
      * @ORM\JoinColumn(nullable=false)
+     * @Ignore()
      */
     private Worker $worker;
 
     /**
      * @ORM\Column(type="integer")
+     * @
      */
     private int $shift;
 
@@ -73,9 +78,9 @@ class WorkerShift
         return $this;
     }
 
-    public function getShift(): ?int
+    public function getShift(): ?string
     {
-        return $this->shift;
+        return self::SHIFTS_REVERSED[$this->shift];
     }
 
     public function setShift(int $shift): self

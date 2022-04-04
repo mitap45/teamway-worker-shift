@@ -34,4 +34,9 @@ final class Version20220403205048 extends AbstractMigration
         $this->addSql('DROP TABLE worker_shift');
         $this->addSql('DROP TABLE messenger_messages');
     }
+
+    public function isTransactional(): bool
+    {
+        return false;
+    }
 }

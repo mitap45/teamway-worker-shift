@@ -26,7 +26,7 @@ class Worker
     /**
      * @ORM\OneToMany(targetEntity=WorkerShift::class, mappedBy="worker")
      */
-    private ArrayCollection $shifts;
+    private $shifts;
 
     public function __construct()
     {
@@ -50,10 +50,7 @@ class Worker
         return $this;
     }
 
-    /**
-     * @return ArrayCollection
-     */
-    public function getShifts(): ArrayCollection
+    public function getShifts()
     {
         return $this->shifts;
     }
