@@ -17,9 +17,9 @@ Client can list workers, add worker and add shift to worker
 `cd teamway-worker-shift/` <br>
 `composer install` <br>
 
-Now you need to modify DATABASE_URL variable for your local mysql connection
+Now you need to modify DATABASE_URL variable in the .env file  for your local mysql connection
 
-`php bin/console doctrine:database:create` creating db in the DATABASE_URL <br>
+`php bin/console doctrine:database:create` creating db that specified in the DATABASE_URL <br>
 `php bin/console doctrine:migrations:migrate` running migrations to db<br>
 `symfony serve` to start internal symfony server<br>
 
